@@ -8,10 +8,10 @@ class Budget(Base):
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('users.id'))
     category = Column(String)
-    amount_limit = Column(Float)
+    limit = Column(Float)
     month = Column(String)  
 
     user = relationship("User", back_populates="budgets")
 
     def __repr__(self):
-        return f"Budget(id={self.id}, category='{self.category}', limit={self.amount_limit}, month='{self.month}')"
+        return f"Budget(id={self.id}, category='{self.category}', limit={self.limit}, month='{self.month}')"

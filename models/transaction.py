@@ -16,4 +16,4 @@ class Transaction(Base):
     user = relationship("User", back_populates="transactions")
 
     def __repr__(self):
-        return f"Transaction(id={self.id}, type='{self.type}', amount={self.amount}, category='{self.category}')"
+        return f"Transaction(id={self.id}, category='{self.category}', amount={self.amount}, date='{self.date}', type='{self.type}')"
